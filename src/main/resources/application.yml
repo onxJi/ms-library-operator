@@ -12,14 +12,16 @@ eureka:
 spring:
   application:
     name: ms-library-operator
-  h2:
-    console:
-      enabled: true
   datasource:
-    url: jdbc:h2:mem:operator_db
+    url: jdbc:postgresql://yamanote.proxy.rlwy.net:21996/postgres
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: LRURZDKaoQMfHoPZwtvrUUPBNPUvdEdH
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
-    # defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: none
 
 url:
   searcher: http://ms-library-searcher
