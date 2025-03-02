@@ -13,7 +13,7 @@ spring:
   application:
     name: ms-library-operator
   datasource:
-    url: jdbc:postgresql://yamanote.proxy.rlwy.net:21996/postgres
+    url: jdbc:postgresql://yamanote.proxy.rlwy.net:21996/railway
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: LRURZDKaoQMfHoPZwtvrUUPBNPUvdEdH
