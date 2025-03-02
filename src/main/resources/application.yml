@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: ${port:8083}
 
 eureka:
   client:
@@ -17,10 +17,10 @@ spring:
   application:
     name: ms-library-operator
   datasource:
-    url: ${datasource_url}
+    url: ${datasource_url:http://localhost}
     driver-class-name: org.postgresql.Driver
-    username: ${datasource_username}
-    password: ${datasource_password}
+    username: ${datasource_username:local}
+    password: ${datasource_password:none}
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
@@ -28,4 +28,4 @@ spring:
       ddl-auto: none
 
 url:
-  searcher: ${url_searcher}
+  searcher: ${url_searcher:http://ms-library-searcher}
