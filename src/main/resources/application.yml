@@ -1,21 +1,23 @@
 server:
-  port: ${port:8083}
+  port: ${port:8080}
 
 eureka:
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     service-url:
       defaultZone: ${eureka_url:http://localhost:8761/eureka}
   instance:
     preferIpAddress: false
-    hostname: ${HOSTNAME:ms-library-operator}
     non-secure-port-enabled: true
     secure-port-enabled: false
     non-secure-port: ${server.port}
     secure-port: 443
+    hostname: ${HOSTNAME:localhost}
 
 spring:
   application:
-    name: ms-library-operator
+    name: ${APP_NAME:ms-library-operator}
   datasource:
     url: ${datasource_url:http://localhost}
     driver-class-name: org.postgresql.Driver
